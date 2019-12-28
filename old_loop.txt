@@ -1,0 +1,80 @@
+                player_won = False
+                monster_won = False
+                print(player)
+                print (monster)
+                print("Select action")
+                print("1) Attack")
+                print("2) Heal")
+                print("3) Exit game")
+                
+
+                player_choice = input()
+
+                if player_choice == "1":
+                    print("You attacked the Monster")
+                    monster['health'] = monster['health'] - player['attack']
+                    if monster['health'] <= 0:
+                        player_won = True
+
+                    else:
+                        print("The Monster attacked you!")
+                        player['health'] = player['health'] - monster['attack']
+                        if player['health'] <= 0:
+                            monster_won = True
+                    print("Monster health:")
+                    print(monster['health'])
+                    print("Your health:")
+                    print(player['health'])
+
+                elif player_choice == "2":
+                    print("Healed")
+                    player['health'] = player['health'] + player['heal']
+                    print("Your health now: ")
+                    print(player['health'])
+
+                elif player_choice == "3":
+                    print("Exiting the game")
+                    new_round = False
+                    game_Running = False
+
+
+                else:
+                    print("Invalid input")
+                
+                if player_won == True:
+                    print("You win")
+
+                if monster_won == True:
+                    print("Monster wins")
+
+
+                if player_won == True or monster_won == True:
+                    print("Game over")
+                    try_again = input("Do you want to play again? ")
+                    if try_again == "Yes":
+                        print("Select difficulty. 1, 2, 3")
+                        diff = input()
+                        if diff == "1":
+                               monster = {'name': 'Monster', 'attack': 10, 'health': 100}
+                               player = {'name': player_name, 'attack': 10, 'heal': 10, 'health': 100}
+                               new_round = True
+
+                        if diff == "2":
+                               monster = {'name': 'Monster', 'attack': 15, 'health': 150}
+                               player = {'name': player_name, 'attack': 10, 'heal': 10, 'health': 100}
+                               new_round = True
+
+                        if diff == "3":
+                               monster = {'name': 'Monster', 'attack': 20, 'health': 300}
+                               player = {'name': player_name, 'attack': 30, 'heal': 20, 'health': 200}
+                               new_round = True
+
+                        if diff == "blyat":
+                               monster = {'name': 'Monster', 'attack': 69, 'health': 666}
+                               player = {'name': player_name, 'attack': 500, 'heal': 0, 'health': 6969}
+                               new_round = True
+                        
+
+                        else:
+                            game_Running = False
+                            new_round = False

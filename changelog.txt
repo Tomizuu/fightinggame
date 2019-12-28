@@ -1,0 +1,6 @@
+26.12.2019
+BIG UPDATE
+
+- You get now random enemies
+
+- Difficulties fixed
