@@ -11,5 +11,5 @@ This was my first ever Python game so it is not so good.
 
 
 
-© Tomizu 2019
+© Tomizu 2020
 
